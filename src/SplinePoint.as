@@ -7,10 +7,11 @@ package
 	 */
 	public class SplinePoint extends Entity
 	{
-		
-		public function SplinePoint() 
+		[Embed(source = "../assets/SplinePoint.png")] public static const IMG_SPLINEPOINT:Class;
+		public function SplinePoint(p:Point) 
 		{
-			
+			super(p.x, p.y);
+			graphic = new Image(IMG_SHIP);
 		}
 		
 	}
