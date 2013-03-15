@@ -13,8 +13,8 @@ package
 		{
 			spline = new Spline(this);
 			spline.initialize(new Point(0, 0), new Point(550, 400));
-			add(new Planet(550, 400));
-			add(new Ship(0, 0));
+			//add(new Planet(550, 400));
+			//add(new Ship(0, 0));
 		}
 		
 		override public function update():void 

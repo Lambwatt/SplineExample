@@ -34,7 +34,7 @@ package
 			resetPoints()
 		}
 		
-		public function interpolateForT(spline:Vector.<ControlPoint>, t):Point
+		public function interpolateForT(spline:Vector.<ControlPoint>, t:Number):Point
 		{
 			if (spline.length == 1)
 			{
@@ -46,9 +46,9 @@ package
 				{
 					var p:Point = new Point;
 					p.x = spline[i-1].x +(t*(spline[i].x - spline[i-1].x));
-					p.y = spline[i-1].y +(t*(spline[i].y - spline[i - 1].y));
+					p.y = spline[i-1].y +(t*(spline[i].y - spline[i-1].y));
 					
-					vec[i - 1] = new ControlPoint(p);
+					vec[i-1] = new ControlPoint(p);
 				}
 				return interpolateForT(vec, t);
 			}
@@ -60,7 +60,7 @@ package
 			{
 				for (var j:int = 0; j < 10; j++ )
 				{
-					var t:Number = ((i as Number) / (controlPoints.length as Number)) + ((j as Number) * (controlPoints.length as Number) / 100.0);
+					var t:Number = ((i as Number) / (controlPoints.length as Number)) + ((j as Number) * 0.02);
 					points[(i*10) + j] = new SplinePoint(interpolateForT(controlPoints, t));
 					world.add(points[(i * 10) + j]);
 				}
