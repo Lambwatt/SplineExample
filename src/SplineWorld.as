@@ -10,7 +10,8 @@ package
 		
 		public function SplineWorld() 
 		{
-			
+			add(new Planet(550, 400));
+			add(new Ship(0,0));
 		}
 		
 	}

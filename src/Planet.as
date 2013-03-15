@@ -8,11 +8,11 @@ package
 	 */
 	public class Planet extends Entity
 	{
-		[Embed(source = "../assets/Planet.png")] public static const IMG_SHIP:Class;
+		[Embed(source = "assets/Planet.png")] public static const IMG_PLANET:Class;
 		public function Planet(x:int,y:int) 
 		{
 			super(x, y);
-			graphic = new Image(IMG_SHIP);
+			graphic = new Image(IMG_PLANET);
 		}
 		
 	}
