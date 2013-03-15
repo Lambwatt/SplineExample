@@ -1,13 +1,16 @@
 package  
 {
 	import net.flashpunk.Entity;
+	import flash.geom.Point;
+	import net.flashpunk.graphics.Image;
 	/**
 	 * ...
 	 * @author Lambwatt
 	 */
 	public class SplinePoint extends Entity
 	{
-		[Embed(source = "assets/SplinePoint.png")] public static const IMG_SPLINEPOINT:Class;
+		var p:Point;
+		[Embed(source = "assets/SmallPoint.png")] public static const IMG_SPLINEPOINT:Class;
 		public function SplinePoint(p:Point) 
 		{
 			super(p.x, p.y);
