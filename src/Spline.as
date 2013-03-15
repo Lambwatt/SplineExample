@@ -14,7 +14,7 @@ package
 		public var arcLengths:Vector.<Number> = new Vector.<Number>();
 		public var t_values:Vector.<Number> = new Vector.<Number>();
 		public var total_arc_length:Number = 0;
-		public var control_poines_modified:Boolean = false;
+		public var control_points_modified:Boolean = false;
 		
 		public function Spline(world:World) 
 		{
@@ -60,14 +60,22 @@ package
 			{
 				for (var j:int = 0; j < 10; j++ )
 				{
-					var t:Number = ((i as Number) / (controlPoints.length as Number)) + ((j as Number) * (controlPoints.length as Number) / 10.0);
+					var t:Number = ((i as Number) / (controlPoints.length as Number)) + ((j as Number) * (controlPoints.length as Number) / 100.0);
 					points[(i*10) + j] = new SplinePoint(interpolateForT(controlPoints, t));
 					world.add(points[(i * 10) + j]);
 				}
 			}
 		}
-		
-		
+			
+		public function update()
+		{
+			if (control_points_modified)
+			{
+				world.removeList(points);
+				resetPoints();
+				control_points_modified = false;
+			}
+		}
 	}
 
 }

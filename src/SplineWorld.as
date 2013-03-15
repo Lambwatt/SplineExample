@@ -17,6 +17,12 @@ package
 			add(new Ship(0, 0));
 		}
 		
+		override public function update():void 
+		{
+			super.update();
+			spline.update();
+		}
+		
 	}
 
 }
